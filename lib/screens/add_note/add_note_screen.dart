@@ -12,13 +12,13 @@ class AddNoteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Notes'),
+        title: const Text('Add Notes'),
         actions: [
           IconButton(
             onPressed: _insertNotes,
             icon: const Icon(Icons.done),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
         ],
       ),
       body: Padding(

@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               );
             }
-            return SizedBox();
+            return const SizedBox();
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

@@ -54,7 +54,8 @@ class ItemNote extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '12:30 PM',
+                    // '12:30 PM',
+                    note!.createdAt.toString(),
                     style: Theme.of(context).textTheme.bodySmall,
                   )
                 ],
@@ -62,7 +63,7 @@ class ItemNote extends StatelessWidget {
               Text(
                 note!.description.toString(),
                 // 'ok desc',
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w300,
                   height: 1.5,
                 ),
