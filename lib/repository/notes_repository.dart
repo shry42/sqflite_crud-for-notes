@@ -43,4 +43,29 @@ class NotesRepository {
           createdAt: DateTime.parse(maps[i]['createdAt']));
     });
   }
+
+  static update({required Note note}) async {
+    final db = await _database();
+
+    //Update the given table
+    await db?.update(
+      _tableName,
+      note.toMap(),
+      //Ensure the tablename has the matching id,
+      where: 'id = ?',
+      whereArgs: [note.id],
+    );
+  }
+
+  static delete({required Note note}) async {
+    final db = await _database();
+
+    //Update the given table
+    await db?.delete(
+      _tableName,
+      //Ensure the tablename has the matching id,
+      where: 'id = ?',
+      whereArgs: [note.id],
+    );
+  }
 }

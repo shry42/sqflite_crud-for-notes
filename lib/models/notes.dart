@@ -1,7 +1,7 @@
 class Note {
   int? id;
   String? title, description;
-  DateTime? createdAt;
+  dynamic? createdAt;
 
   Note({
     this.id,

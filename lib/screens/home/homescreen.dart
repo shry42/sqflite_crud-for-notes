@@ -20,13 +20,18 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () => setState(() {}),
+              icon: const Icon(Icons.refresh)),
+        ],
       ),
       body: FutureBuilder(
           future: NotesRepository.getNotes(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               if (snapshot.data == null || snapshot.data!.isEmpty) {
-                return Center(child: const Text('Empty'));
+                return const Center(child: Text('Empty'));
               }
               return ListView(
                 padding: const EdgeInsets.all(15),
